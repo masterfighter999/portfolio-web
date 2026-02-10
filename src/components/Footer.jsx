@@ -29,10 +29,9 @@ const Footer = () => {
                 </div>
 
                 {/* Copyright */}
+                {/* Copyright */}
                 <div className="text-gray-600 text-xs flex items-center gap-1 mt-8">
-                    <span>Designed with</span>
-                    <Heart size={10} className="text-red-500 fill-red-500" />
-                    <span>using the "Neon Architect" System</span>
+                    <span>© {new Date().getFullYear()} Swayam Chatterjee. All rights reserved.</span>
                 </div>
 
             </div>
