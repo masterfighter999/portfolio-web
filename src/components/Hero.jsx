@@ -55,12 +55,9 @@ const Hero = () => {
 
                 {/* CTA Button */}
                 <div className="pt-8">
-                    <button className="group relative px-8 py-4 bg-secondary rounded-full text-white font-semibold flex items-center gap-3 mx-auto overflow-hidden transition-all duration-300 hover:scale-105 btn-glow-orange active:scale-95">
+                    <button className="group btn-premium-primary px-8 py-4 rounded-full font-bold flex items-center gap-3 mx-auto text-lg tracking-wide">
                         <span className="relative z-10">View Architecture</span>
                         <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
-
-                        {/* Hover Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
                 </div>
 

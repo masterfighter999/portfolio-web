@@ -54,7 +54,7 @@ const Projects = () => {
 
                     {/* Footer Actions */}
                     <div className="flex items-center justify-between mt-auto">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-colors shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20">
+                        <button className="flex items-center gap-2 px-4 py-2 btn-premium-secondary rounded-lg font-semibold transition-all shadow-lg hover:shadow-orange-500/20">
                             <Play size={16} fill="currentColor" /> View GitHub Repo
                         </button>
                     </div>
@@ -82,7 +82,7 @@ const Projects = () => {
 
                     {/* Visualization: Redis Graph */}
                     <div className="bg-black/60 rounded-xl p-4 mb-6 border border-white/5 relative overflow-hidden h-32 flex flex-col justify-end shadow-inner">
-                        <div className="absolute top-3 right-3 text-xs text-primary font-mono">Latency: 12ms</div>
+                        <div className="w-full text-right pb-2 text-xs text-primary font-mono">Latency: 12ms</div>
 
                         {/* Simulated Graph Bars */}
                         <div className="flex items-end justify-between h-20 gap-1 opacity-80">

@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
         {/* Action Button */}
-        <button className="hidden md:block bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-200 btn-glow-purple">
+        <button className="hidden md:block btn-premium-secondary px-6 py-2 rounded-full text-sm font-semibold tracking-wide shadow-[0_0_10px_rgba(168,85,247,0.5)]">
           Get in Touch
         </button>
       </nav>
