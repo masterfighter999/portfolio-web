@@ -54,9 +54,9 @@ const Projects = () => {
 
                     {/* Footer Actions */}
                     <div className="flex items-center justify-between mt-auto">
-                        <button className="flex items-center gap-2 px-4 py-2 btn-premium-secondary rounded-lg font-semibold transition-all shadow-lg hover:shadow-orange-500/20">
+                        <a href="https://github.com/masterfighter999/my-library-app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 btn-premium-secondary rounded-lg font-semibold transition-all shadow-lg hover:shadow-orange-500/20">
                             <Play size={16} fill="currentColor" /> View GitHub Repo
-                        </button>
+                        </a>
                     </div>
 
                     {/* Glow Effect */}
@@ -102,9 +102,9 @@ const Projects = () => {
 
                     {/* Footer Actions */}
                     <div className="flex items-center justify-between mt-auto">
-                        <button className="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 hover:text-glow">
+                        <a href="https://my-library-app-henna.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 hover:text-glow">
                             Learn more <TrendingUp size={14} />
-                        </button>
+                        </a>
                         <div className="text-xs text-gray-500 bg-white/5 px-2 py-1 rounded border border-white/5">v2.4.0</div>
                     </div>
 
