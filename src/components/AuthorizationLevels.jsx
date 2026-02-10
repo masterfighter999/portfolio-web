@@ -124,7 +124,10 @@ const BadgeCard = ({ badge, index }) => {
             </div>
 
             {/* Footer Status */}
-            <div
+            <a
+                href={badge.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ transform: "translateZ(30px)" }}
                 className={`
                 mt-6 py-2 px-8 rounded-full 
@@ -132,9 +135,10 @@ const BadgeCard = ({ badge, index }) => {
                 text-sm font-bold tracking-[0.2em]
                 ${badge.textColor} uppercase
                 shadow-[0_0_15px_inset] ${badge.shadowColor}
+                hover:bg-white/10 transition-colors cursor-pointer
             `}>
                 {badge.status}
-            </div>
+            </a>
         </motion.div>
     );
 };
@@ -148,6 +152,7 @@ const AuthorizationLevels = () => {
             glowColor: "cyan", // Cyan / Electric Blue
             icon: Brain,
             status: "VERIFIED",
+            link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=4EEA6E9D80BF6FA0689B2B8C4A6BB481339A85529282D72E69355D901694D2ED",
             borderColor: "border-cyan-500/50",
             shadowColor: "shadow-cyan-500/50",
             textColor: "text-cyan-400",
@@ -160,6 +165,7 @@ const AuthorizationLevels = () => {
             glowColor: "amber", // Amber / Gold
             icon: Network,
             status: "VERIFIED",
+            link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=BEFBBE6309F67FB277FBB3BB979CB27E5FE49DB0BA45C70FB5B81B0BDA4176F0",
             borderColor: "border-amber-500/50",
             shadowColor: "shadow-amber-500/50",
             textColor: "text-amber-400",
@@ -172,6 +178,7 @@ const AuthorizationLevels = () => {
             glowColor: "orange", // AWS Orange
             icon: Hexagon,
             status: "COMPLETED",
+            link: "https://www.theforage.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_68d2500f3531e46c2424bd38_1758636422880_completion_certificate.pdf",
             borderColor: "border-orange-500/50",
             shadowColor: "shadow-orange-500/50",
             textColor: "text-orange-400",
