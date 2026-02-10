@@ -31,7 +31,7 @@ const Hero = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
+            <div className="relative z-10 text-center max-w-7xl mx-auto space-y-8">
 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill border border-white/10 mb-4 animate-float bg-black/40 backdrop-blur-md">
@@ -40,9 +40,9 @@ const Hero = () => {
                 </div>
 
                 {/* Main Headline */}
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                     <span className="block text-white mb-2 text-glow mix-blend-screen">Swayam Chatterjee</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500 text-glow">Software Developer</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500 text-glow whitespace-nowrap">Full Stack Software Developer</span>
                 </h1>
 
                 {/* Subheader */}

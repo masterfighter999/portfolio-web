@@ -8,7 +8,7 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'Projects', href: '#projects' },
     { name: 'System Design', href: '#system-design' },
-    { name: 'Resume', href: '#resume' },
+    { name: 'Resume', href: 'https://drive.google.com/file/d/1Z0rRHWrmNZQ2mm4U5pgAwXep5QA1bhHd/view?usp=sharing' },
   ];
 
   return (
@@ -28,6 +28,8 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
+              target={link.name === 'Resume' ? "_blank" : undefined}
+              rel={link.name === 'Resume' ? "noopener noreferrer" : undefined}
               className="text-sm font-medium text-text-secondary hover:text-white hover:text-glow transition-all duration-200"
             >
               {link.name}
@@ -48,6 +50,8 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
+              target={link.name === 'Resume' ? "_blank" : undefined}
+              rel={link.name === 'Resume' ? "noopener noreferrer" : undefined}
               className="text-gray-300 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5"
               onClick={() => setIsMenuOpen(false)}
             >
