@@ -11,13 +11,13 @@ const Footer = () => {
 
                 {/* Contact Links */}
                 <div className="flex gap-8">
-                    <a href="#" className="p-3 glass-pill hover:bg-white/10 text-gray-400 hover:text-white transition-all hover:scale-110">
+                    <a href="https://www.linkedin.com/in/swayam-chatterjee" target="_blank" rel="noopener noreferrer" className="p-3 glass-pill hover:bg-white/10 text-gray-400 hover:text-white transition-all hover:scale-110">
                         <Linkedin size={20} />
                     </a>
-                    <a href="#" className="p-3 glass-pill hover:bg-white/10 text-gray-400 hover:text-white transition-all hover:scale-110">
+                    <a href="https://github.com/masterfighter999" target="_blank" rel="noopener noreferrer" className="p-3 glass-pill hover:bg-white/10 text-gray-400 hover:text-white transition-all hover:scale-110">
                         <Github size={20} />
                     </a>
-                    <a href="#" className="p-3 glass-pill hover:bg-white/10 text-gray-400 hover:text-white transition-all hover:scale-110">
+                    <a href="mailto:swayamchatterjee.office@gmail.com" className="p-3 glass-pill hover:bg-white/10 text-gray-400 hover:text-white transition-all hover:scale-110">
                         <Mail size={20} />
                     </a>
                 </div>
@@ -25,7 +25,7 @@ const Footer = () => {
                 {/* Info */}
                 <div className="text-center space-y-2">
                     <h3 className="text-xl font-bold text-white">Swayam Chatterjee</h3>
-                    <p className="text-gray-500 text-sm">Kolkata, India • +1 (123) 456-7890</p>
+                    <p className="text-gray-500 text-sm">Kolkata, India</p>
                 </div>
 
                 {/* Copyright */}
