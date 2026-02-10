@@ -4,12 +4,12 @@
 
 :root {
   /* Deep Space Background */
-  --bg-dark: #030014;
-  /* Darker, slightly purple tinted black */
+  --bg-dark: #050505;
+  /* Neutral black */
 
   /* Glassmorphism Tokens */
-  --bg-card: rgba(45, 27, 105, 0.15);
-  /* Purple tint glass */
+  --bg-card: rgba(255, 255, 255, 0.03);
+  /* Neutral glass */
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-highlight: rgba(255, 255, 255, 0.05);
 

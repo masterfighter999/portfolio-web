@@ -12,7 +12,8 @@ const Hero = () => {
                     <defs>
                         <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="transparent" />
-                            <stop offset="50%" stopColor="#a855f7" />
+                            <stop offset="30%" stopColor="#a855f7" />
+                            <stop offset="70%" stopColor="#f97316" />
                             <stop offset="100%" stopColor="transparent" />
                         </linearGradient>
                     </defs>
@@ -33,22 +34,22 @@ const Hero = () => {
             <div className="relative z-10 text-center max-w-4xl mx-auto space-y-8">
 
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill border border-primary/30 mb-4 animate-float">
-                    <Server size={14} className="text-primary" />
-                    <span className="text-xs uppercase tracking-widest text-primary font-semibold">System Architect</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill border border-white/10 mb-4 animate-float bg-black/40 backdrop-blur-md">
+                    <Server size={14} className="text-orange-400" />
+                    <span className="text-xs uppercase tracking-widest text-orange-200 font-semibold">Software Developer</span>
                 </div>
 
                 {/* Main Headline */}
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                    <span className="block text-white mb-2 text-glow">Scalable Backends.</span>
-                    <span className="heading-gradient text-glow">Effortless Architecture.</span>
+                    <span className="block text-white mb-2 text-glow mix-blend-screen">Swayam Chatterjee</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500 text-glow">Software Developer</span>
                 </h1>
 
                 {/* Subheader */}
-                <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-                    Specializing in <span className="text-white font-medium">Microservices</span>,{' '}
-                    <span className="text-white font-medium">Kafka Event Streams</span>, and{' '}
-                    <span className="text-white font-medium">Cloud Native Solutions</span>.
+                <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                    Specializing in <span className="text-orange-400 font-medium">Microservices</span>,{' '}
+                    <span className="text-purple-400 font-medium">Kafka Event Streams</span>, and{' '}
+                    <span className="text-orange-400 font-medium">Cloud Native Solutions</span>.
                     Building robust systems that scale with your vision.
                 </p>
 
