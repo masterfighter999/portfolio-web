@@ -1,6 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Book, Terminal, Code, MapPin, Calendar, Server } from 'lucide-react';
+
+const TerminalLoader = () => {
+    const [text, setText] = useState('');
+    const fullText = "Initializing education modules...";
+    const [progress, setProgress] = useState(0);
+    const [showProgress, setShowProgress] = useState(false);
+    const [cycle, setCycle] = useState(0);
+
+    useEffect(() => {
+        let i = 0;
+        let typingInterval;
+        let progressInterval;
+        let resetTimeout;
+
+        // Reset states for new cycle
+        setText('');
+        setProgress(0);
+        setShowProgress(false);
+
+        // 1. Typing Animation
+        typingInterval = setInterval(() => {
+            if (i <= fullText.length) {
+                setText(fullText.substring(0, i));
+                i++;
+            } else {
+                clearInterval(typingInterval);
+                setShowProgress(true);
+            }
+        }, 30);
+
+        // Clean up function
+        return () => {
+            clearInterval(typingInterval);
+            clearInterval(progressInterval);
+            clearTimeout(resetTimeout);
+        };
+    }, [cycle]);
+
+    // 2. Progress Bar Animation
+    useEffect(() => {
+        let progressInterval;
+        if (showProgress) {
+            progressInterval = setInterval(() => {
+                setProgress(prev => {
+                    if (prev >= 100) {
+                        clearInterval(progressInterval);
+                        // 3. Wait and Reset
+                        setTimeout(() => setCycle(c => c + 1), 2000);
+                        return 100;
+                    }
+                    return prev + 2;
+                });
+            }, 20);
+        }
+        return () => clearInterval(progressInterval);
+    }, [showProgress]);
+
+    return (
+        <div className="font-mono text-sm flex flex-col items-start min-h-[48px]">
+            <span className="text-green-500/60">
+                {'>'} {text}<span className="animate-pulse">_</span>
+            </span>
+            {showProgress && (
+                <span className="text-green-400/80 mt-1 whitespace-pre">
+                    {`[${'#'.repeat(Math.floor(progress / 5))}${'.'.repeat(20 - Math.floor(progress / 5))}] ${progress}%`}
+                </span>
+            )}
+        </div>
+    );
+};
 
 const SystemKernel = () => {
     return (
@@ -20,9 +90,7 @@ const SystemKernel = () => {
                         <h2 className="text-3xl font-bold font-mono text-green-400 tracking-tight">
                             System Kernel
                         </h2>
-                        <p className="text-green-500/60 font-mono text-sm">
-                            {'>'} Initializing education modules...
-                        </p>
+                        <TerminalLoader />
                     </div>
                 </motion.div>
 
@@ -45,25 +113,28 @@ const SystemKernel = () => {
                             {/* Grid Background */}
                             <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
 
+                            {/* Scanline Effect */}
+                            <div className="absolute inset-0 bg-green-500/5 h-[10px] w-full blur-md animate-scanline opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none top-0" style={{ animationDuration: '2s' }} />
+
                             {/* Header */}
                             <div className="flex justify-between items-start mb-8 relative">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                         <GraduationCap className="text-green-400" size={24} strokeWidth={1.5} />
                                     </div>
                                     <div>
                                         <div className="text-xs font-mono text-green-500/60 mb-1">MASTER_NODE</div>
-                                        <h3 className="text-xl font-bold text-white">Jadavpur University</h3>
+                                        <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">Jadavpur University</h3>
                                     </div>
                                 </div>
-                                <div className="px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-xs text-green-400 font-mono animate-pulse">
+                                <div className="px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-xs text-green-400 font-mono animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.2)]">
                                     ACTIVE
                                 </div>
                             </div>
 
                             {/* Content */}
                             <div className="space-y-4 font-mono text-sm relative">
-                                <div className="flex items-start gap-4 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-green-500/20 transition-colors">
+                                <div className="flex items-start gap-4 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-green-500/20 transition-colors group-hover:bg-green-500/5">
                                     <Server className="text-green-500 mt-0.5" size={16} />
                                     <div>
                                         <div className="text-gray-400 text-xs">Degree</div>
@@ -72,14 +143,14 @@ const SystemKernel = () => {
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-green-500/20 transition-colors">
                                         <Calendar className="text-green-500" size={16} />
                                         <div>
                                             <div className="text-gray-400 text-xs">Period</div>
                                             <div className="text-green-100">2024 - Present</div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-green-500/20 transition-colors">
                                         <MapPin className="text-green-500" size={16} />
                                         <div>
                                             <div className="text-gray-400 text-xs">Location</div>
@@ -109,15 +180,18 @@ const SystemKernel = () => {
                             {/* Grid Background */}
                             <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
 
+                            {/* Scanline Effect */}
+                            <div className="absolute inset-0 bg-blue-500/5 h-[10px] w-full blur-md animate-scanline opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none top-0" style={{ animationDuration: '2.5s' }} />
+
                             {/* Header */}
                             <div className="flex justify-between items-start mb-8 relative">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                         <Book className="text-blue-400" size={24} strokeWidth={1.5} />
                                     </div>
                                     <div>
                                         <div className="text-xs font-mono text-blue-500/60 mb-1">BASE_NODE</div>
-                                        <h3 className="text-xl font-bold text-white">Visva-Bharati University</h3>
+                                        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Visva-Bharati University</h3>
                                     </div>
                                 </div>
                                 <div className="px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs text-blue-400 font-mono">
@@ -127,7 +201,7 @@ const SystemKernel = () => {
 
                             {/* Content */}
                             <div className="space-y-4 font-mono text-sm relative">
-                                <div className="flex items-start gap-4 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/20 transition-colors">
+                                <div className="flex items-start gap-4 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/20 transition-colors group-hover:bg-blue-500/5">
                                     <Code className="text-blue-500 mt-0.5" size={16} />
                                     <div>
                                         <div className="text-gray-400 text-xs">Degree</div>
@@ -136,14 +210,14 @@ const SystemKernel = () => {
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/20 transition-colors">
                                         <Calendar className="text-blue-500" size={16} />
                                         <div>
                                             <div className="text-gray-400 text-xs">Period</div>
                                             <div className="text-blue-100">2021 - 2024</div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-500/20 transition-colors">
                                         <MapPin className="text-blue-500" size={16} />
                                         <div>
                                             <div className="text-gray-400 text-xs">Location</div>
