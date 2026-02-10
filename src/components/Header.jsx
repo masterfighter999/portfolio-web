@@ -12,10 +12,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-      <nav className="glass-pill px-6 py-3 flex items-center justify-between w-full max-w-2xl transition-all duration-300">
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <nav className="glass-pill px-6 py-3 flex items-center justify-between w-full max-w-2xl transition-all duration-300 pointer-events-auto">
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden text-gray-300 hover:text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -23,12 +23,12 @@ const Header = () => {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 mx-auto">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200"
+              className="text-sm font-medium text-text-secondary hover:text-white hover:text-glow transition-all duration-200"
             >
               {link.name}
             </a>
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
         {/* Action Button */}
-        <button className="ml-auto md:ml-0 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-200 shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]">
+        <button className="hidden md:block bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all duration-200 btn-glow-purple">
           Get in Touch
         </button>
       </nav>

@@ -11,18 +11,18 @@ const TechBar = () => {
     ];
 
     return (
-        <section className="py-10 flex justify-center">
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 hover:opacity-100 transition-opacity duration-500">
+        <section className="py-10 flex justify-center relative z-10">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500">
                 {technologies.map((tech) => (
                     <div
                         key={tech.name}
                         className="flex items-center gap-2 group cursor-default"
                     >
                         {/* Icon placeholder - using Lucide or custom SVG */}
-                        <span className="text-gray-500 group-hover:text-white transition-colors duration-300">
+                        <span className="text-text-muted group-hover:text-primary transition-colors duration-300 transform group-hover:scale-110">
                             {tech.icon}
                         </span>
-                        <span className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-b from-gray-400 to-gray-600 group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                        <span className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-b from-gray-400 to-gray-600 group-hover:from-white group-hover:to-gray-300 transition-all duration-300 group-hover:text-glow">
                             {tech.name}
                         </span>
                     </div>
