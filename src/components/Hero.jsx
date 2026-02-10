@@ -55,10 +55,10 @@ const Hero = () => {
 
                 {/* CTA Button */}
                 <div className="pt-8">
-                    <button className="group btn-premium-primary px-8 py-4 rounded-full font-bold flex items-center gap-3 mx-auto text-lg tracking-wide">
-                        <span className="relative z-10">View Architecture</span>
-                        <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    <a href="https://github.com/masterfighter999/portfolio-web" target="_blank" rel="noopener noreferrer" className="group btn-premium-primary px-6 py-2.5 rounded-full font-bold flex items-center gap-2 mx-auto text-sm tracking-wide w-fit border border-orange-500/20">
+                        <span className="relative z-10 uppercase tracking-tight">view website repo</span>
+                        <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+                    </a>
                 </div>
 
             </div>
