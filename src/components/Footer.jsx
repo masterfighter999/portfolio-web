@@ -3,7 +3,7 @@ import { Linkedin, Github, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="relative py-12 px-4 mt-20 border-t border-white/5 bg-[#020202]">
+        <footer id="contact" className="relative py-12 px-4 mt-20 border-t border-white/5 bg-[#020202]">
             {/* Bottom Glow */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-orange-600/20 blur-[100px] pointer-events-none" />
 
