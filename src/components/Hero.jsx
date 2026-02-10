@@ -42,7 +42,7 @@ const Hero = () => {
                 {/* Main Headline */}
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                     <span className="block text-white mb-2 text-glow mix-blend-screen">Swayam Chatterjee</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500 text-glow whitespace-nowrap">Full Stack Software Developer</span>
+                    <span className="block md:inline text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500 text-glow">Full Stack Software Developer</span>
                 </h1>
 
                 {/* Subheader */}
