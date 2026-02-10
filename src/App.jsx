@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import TechBar from './components/TechBar';
 import AuthorizationLevels from './components/AuthorizationLevels';
+import SystemKernel from './components/SystemKernel';
 import Projects from './components/Projects';
 import Terminal from './components/Terminal';
 import Footer from './components/Footer';
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <TechBar />
         <AuthorizationLevels />
+        <SystemKernel />
         <Projects />
         <Terminal />
       </main>
